@@ -1,0 +1,9 @@
+<div class="card cursor" (click)="goToDetails()">
+    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
+    <div class="card-body">
+        <h5>{{ movie?.title }}</h5>
+        <p class="mb-1">{{ movie?.release_date | date: 'yyyy' }} </p>
+        <p><i class="bi bi-star"></i> {{ movie?.vote_average }}</p>
+        <i class="bi bi-bookmark-heart-fill" *ngIf="!isIconVisible" (click)="toggleWatchlist($event)"></i>
+    </div>
+</div>

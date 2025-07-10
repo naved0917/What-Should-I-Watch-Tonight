@@ -1,0 +1,14 @@
+<div class="d-flex align-items-center mb-3">
+    <i class="bi bi-arrow-left me-3 cursor f-18" (click)="back()"></i>
+    <h2>My Watchlist</h2>
+</div>
+<ng-container *ngIf="movies.length >0;else noMovie">
+    <div class="row">
+        <div class="col-md-3 mb-3" *ngFor="let movie of movies">
+            <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+    </div>
+</ng-container>
+<ng-template #noMovie>
+<p>No Watchlist Available.</p>
+</ng-template>

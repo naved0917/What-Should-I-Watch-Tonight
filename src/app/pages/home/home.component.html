@@ -1,0 +1,18 @@
+<h1>What Should I Watch Tonight?</h1>
+<p>Select a mood:</p>
+<button class="btn btn-primary me-3" (click)="loadMood(35)">Feel Good</button>
+<button class="btn btn-primary me-3" (click)="loadMood(28)">Action Fix</button>
+<button class="btn btn-primary me-3" (click)="loadMood(9648)">Mind Benders</button>
+<button class="btn btn-secondary" (click)="myWatchlist()">My Watchlist</button>
+<div class="form-group d-flex align-items-center my-3">
+    <input class="form-control" [(ngModel)]="searchTerm" placeholder="Search..." />
+    <button class="btn btn-success ms-3" (click)="search()">Search</button>
+</div>
+
+<div *ngIf="movies">
+    <div class="row">
+        <div class="col-md-3 mb-3" *ngFor="let movie of movies">
+            <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+    </div>
+</div>
